@@ -1,0 +1,32 @@
+<head>
+  <title>Fineprint</title>
+  <link rel="stylesheet" href="fineprint.css" type="text/css" />
+</head>
+
+<body>
+  <div class="header">
+    <span class="brand">fineprint</span>
+  </div>
+  <div class="container">
+    {{>new}} 
+    <div class="item-container">
+      {{#each fineprint}} {{> item}} {{/each}}
+    </div>
+    
+  </div>
+
+</body>
+
+<template name="item">
+   
+     <span class="words">{{words}}<span class="origin"><a href="#" class="delete">{{origin}}</a></span></span>
+
+</template>
+
+<template name="new">
+  <form>
+    <input type="text" id="print-input" name="words" placeholder="Fineprint">
+    <input type="text" id="origin-input" name="origin" placeholder="Source">
+    <input id="submit-fineprint" type="submit">
+  </form>
+</template>

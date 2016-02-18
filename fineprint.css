@@ -1,0 +1,108 @@
+
+@font-face {
+    font-family: Fake Receipt;
+    src: url(/fake_receipt.woff);
+    font-weight:normal;
+}
+
+
+body {
+    background-color:white;
+    font-family:Fake Receipt;
+}
+
+input, select {
+    height:100px;
+}
+
+select {
+    padding:20px;
+    font-family:Fake Receipt;
+}
+
+#print-input {
+    width: 50%;
+    font-family:Fake Receipt;
+    font-size:20pt;
+    border:0pt solid black;
+    background-color:white;
+   
+}
+
+#origin-input {
+    width: 30%;
+    font-family:Fake Receipt;
+    font-size:20pt;
+    border:0pt solid black;
+    background-color:#FAFFBD;
+    text-align:center;
+   
+}
+
+
+input[type=submit] {
+    background:white;
+    font-family: Fake Receipt;
+    font-size:20pt;
+    margin-left:20px;
+    color:#a9a9a9;
+    border:3px #FAFFBD ;
+    cursor: -moz-zoom-in; 
+    cursor: -webkit-zoom-in; 
+    cursor: zoom-in;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+
+.delete { 
+    text-decoration:none;
+    color:black;
+    
+}
+
+
+.header {
+    width:100%;
+    margin:10px auto;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:10px 20px;
+}
+
+.container {
+    width:70%;
+    margin:100px auto;
+}
+
+.item-container {
+    margin-top:40px;
+}
+
+.brand {
+    font-family: Fake Receipt;
+    color:black;
+    font-size:10pt;
+}
+
+/* The animation code */
+@keyframes enlarge {
+    from {font-size: 1pt;}
+    to {font-size: 1000pt;}
+
+}
+
+.words {
+    font-size:20pt;
+    animation: enlarge 700s infinite;
+}
+
+.format {
+    font-size:30pt;
+    font-weight:bold;
+}
+
+.origin {
+    background-color:#FAFFBD;
+}
