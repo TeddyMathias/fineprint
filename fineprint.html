@@ -4,24 +4,62 @@
 </head>
 
 <body>
-  <div class="header">
-    <span class="brand">fineprint</span>
+  <div class="dropdown">
+  <span>  {{#if currentUser}}
+  X
+  {{else}}
+    FINEPRINT
+  {{/if}}</span>
+  <div class="dropdown-content">
+      <div class="admin">
+    <!--{{> loginButtons}}-->
+    {{#if currentUser}} {{> settings}} {{else}} {{> signup}} {{> login}} {{/if}}
+
   </div>
+  </div>
+</div>
+
   <div class="container">
-    {{>new}} 
+    {{#if currentUser}}
+    {{>new}}
+    {{/if}}
     <div class="item-container">
       {{#each fineprint}} {{> item}} {{/each}}
     </div>
-    
   </div>
-
 </body>
 
-<template name="item">
-   
-     <span class="words">{{words}}<span class="origin"><a href="#" class="delete">{{origin}}</a></span></span>
-
+<template name="signup">
+  <h2>Signup</h2>
+  <form>
+    <input class="admin-input" type="text" name="signupUsername" placeholder="Username">
+    <input  class="admin-input" type="password" name="signupPassword" placeholder="Password">
+    <input  class="admin-input" type="submit" value="Signup">
+  </form>
 </template>
+
+<template name="login">
+  <h2>Login</h2>
+  <form>
+    <input  class="admin-input" type="text" name="loginUsername" placeholder="Username">
+    <input  class="admin-input" type="password" name="loginPassword" placeholder="Password">
+    <input  class="admin-input" type="submit" value="Login">
+  </form>
+</template>
+
+<template name="settings">
+  <p></p>
+  <p><a href="#" class="logout">Logout</a></p>
+</template>
+
+<template name="item">
+    <div style="background-color:{{usercolor}};" class="words delete">
+    {{words}}
+    <span class="username">{{username}}</span>
+    <span class="origin">{{origin}}</span>
+  </div>
+</template>
+
 
 <template name="new">
   <form>

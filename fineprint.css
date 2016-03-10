@@ -1,108 +1,170 @@
-
 @font-face {
-    font-family: Fake Receipt;
-    src: url(/fake_receipt.woff);
-    font-weight:normal;
+    font-family: 'Fake Receipt';
+    src: url('fonts/fakerece-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
+.admin, .admin  submit {
+    width: 20%;
+    font-size: 5pt;
+}
+
+.admin-input {
+    height: 20px;
+    font-family: Fake Receipt;
+    font-size: 10pt;
+}
 
 body {
-    background-color:white;
-    font-family:Fake Receipt;
+    background-color: white;
+    font-family: Fake Receipt;
 }
 
-input, select {
-    height:100px;
+input {
+    height: 40px;
+    font-family: Fake Receipt;
+    font-size: 20pt;
 }
 
 select {
-    padding:20px;
-    font-family:Fake Receipt;
+    padding: 20px;
+    font-family: Fake Receipt;
 }
 
 #print-input {
     width: 50%;
-    font-family:Fake Receipt;
-    font-size:20pt;
-    border:0pt solid black;
-    background-color:white;
-   
+    border: none;
+    background-color: white;
 }
 
 #origin-input {
-    width: 30%;
-    font-family:Fake Receipt;
-    font-size:20pt;
-    border:0pt solid black;
-    background-color:#FAFFBD;
-    text-align:center;
-   
+    width: 20%;
+    border: none;
+    background-color: #FAFFBD;
+    text-align: center;
 }
-
 
 input[type=submit] {
-    background:white;
-    font-family: Fake Receipt;
-    font-size:20pt;
-    margin-left:20px;
-    color:#a9a9a9;
-    border:3px #FAFFBD ;
-    cursor: -moz-zoom-in; 
-    cursor: -webkit-zoom-in; 
+    background: #DCDCDC;
     cursor: zoom-in;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    color: #FFFFFF;
+    border: 3px solid #C8C8C8;
+}
+
+.delete {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 
-.delete { 
-    text-decoration:none;
-    color:black;
-    
-}
+/*.header {*/
+/*    width:100%;*/
+/*    margin:10px auto;*/
+/*   position:fixed;*/
 
 
-.header {
-    width:100%;
-    margin:10px auto;
-    position:fixed;
-    left:0;
-    top:0;
-    padding:10px 20px;
-}
+/*    left:0;*/
+
+
+/*    top:0;*/
+
+
+/*    padding:10px 20px;*/
+
+
+/*}*/
 
 .container {
-    width:70%;
-    margin:100px auto;
+    width: 80%;
+    margin: 10px auto;
 }
 
 .item-container {
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 .brand {
     font-family: Fake Receipt;
-    color:black;
-    font-size:10pt;
+    color: black;
+    font-size: 10pt;
 }
 
-/* The animation code */
-@keyframes enlarge {
-    from {font-size: 1pt;}
-    to {font-size: 1000pt;}
 
+/* The animation code */
+
+@keyframes enlarge {
+    from {
+        font-size: 1pt;
+    }
+    to {
+        font-size: 1000pt;
+    }
 }
 
 .words {
-    font-size:20pt;
-    animation: enlarge 700s infinite;
+    font-size: 20pt;
+    animation: enlarge 3000s infinite;
+}
+
+.username {
+    text-decoration: underline;
+}
+
+.hyphenate {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 .format {
-    font-size:30pt;
-    font-weight:bold;
+    font-size: 30pt;
+    font-weight: bold;
 }
 
 .origin {
-    background-color:#FAFFBD;
+    background-color: #FAFFBD;
+}
+
+#login-buttons .login-button,
+.accounts-dialog .login-button {
+    background-color: white;
+    color: black;
+}
+
+#login-buttons a,
+.accounts-dialog a {
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 6pt;
+    font-family:Fake Receipt;
+}
+
+.accounts-dialog label, .accounts-dialog .title {
+    font-size: 10pt;
+    margin-top: 7px;
+    margin-bottom: -2px;
+    font-family: Fake Receipt;
 }
