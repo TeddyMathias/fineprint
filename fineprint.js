@@ -5,6 +5,15 @@ var Fineprint = new Mongo.Collection("fineprint");
 // This code executes only on the client
 
 if (Meteor.isClient) {
+  
+  // var since = moment("03/10/2016 15:19:00", "DD/MM/YYYY HH:mm:ss");
+  
+  // Session.setDefault("now", moment());
+  
+  // Meteor.setInterval(function() {
+  //   Session.set("now", moment());
+  // }, 1000);
+  
   Template.body.helpers({
     
     //Things hellper retunrs a list of things.
@@ -13,13 +22,24 @@ if (Meteor.isClient) {
       return Fineprint.find().fetch().reverse();
     }
   });
+  
+  Template.item.helpers({
+    
+    // font_size: function() {
+      
+      // : Return Session.get("now").diff(moment(this.created_at)), converted into a font size
+    //   return 48;
+      
+    // }
+    
+  });
 
   Template.signup.events({
     'submit form': function(event) {
       event.preventDefault();
       var usernameVar = event.target.signupUsername.value;
       var passwordVar = event.target.signupPassword.value;
-      var myArray = ['#FCDFFF', '#e3e4FA', '#fdeef4','#c6deff','#e9cfec', '#ECD672','#C8D560','#FFE87C','#ECE5B6','#FFF8C6','#FAF8CC','#57E964', '#5EFb6E', '#64E986', '#6AFB92'];  
+      var myArray = ['#e9cfec', '#fcdfff', '#e3e4fa', '#fdeef4', '#c6deff', '#addfff', '#bdedff', '#eoffff', '#c2dfff', '#c8b5t0', '#ecd672', '#ecd872', '#ffe87c', '#ece5b6', '#fff8c6', '#faf8cc','#f9b7ff', '#e6a9ec', '#c38ec7', '#d2b9d3', '#c6aec7', '#ebdde2', '#c8bbbe','#3ea99f', '#82cafa', '#a0cfec', '#87afc7', '#82caff', '#57e964', '#5efb6e', '#63e986','#6afb92' ];  
       var rand = myArray[Math.floor(Math.random() * myArray.length)];
       Accounts.createUser({
         username: usernameVar,
@@ -54,7 +74,17 @@ if (Meteor.isClient) {
       event.preventDefault();
       Fineprint.remove(this._id);
 
+    },
+    
+    "click .words": function(event) {
+      event.preventDefault();
+      (".words").removeClass( ".words" );
+
     }
+    
+    
+    
+    
   });
 
 
@@ -71,6 +101,7 @@ if (Meteor.isClient) {
           origin: form.origin.value,
           createdAt: new Date(), // current time
           owner: Meteor.userId(), // _id of logged in user
+          username: Meteor.user().username,
           usercolor: Meteor.user().profile.usercolor // username of logged in user
         })
         //Clear text values

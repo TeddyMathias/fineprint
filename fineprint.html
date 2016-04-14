@@ -5,10 +5,10 @@
 
 <body>
   <div class="dropdown">
-  <span>  {{#if currentUser}}
-  X
+  <span class="brand">  {{#if currentUser}}
+  User
   {{else}}
-    FINEPRINT
+    Agreement
   {{/if}}</span>
   <div class="dropdown-content">
       <div class="admin">
@@ -28,6 +28,10 @@
     </div>
   </div>
 </body>
+
+<template name="username">
+  <p>{{username}}</p>
+</template>
 
 <template name="signup">
   <h2>Signup</h2>
@@ -53,7 +57,7 @@
 </template>
 
 <template name="item">
-    <div style="background-color:{{usercolor}};" class="words delete">
+    <div style="background-color:{{usercolor}};" class="words">
     {{words}}
     <span class="username">{{username}}</span>
     <span class="origin">{{origin}}</span>
@@ -62,9 +66,9 @@
 
 
 <template name="new">
-  <form>
-    <input type="text" id="print-input" name="words" placeholder="Fineprint">
-    <input type="text" id="origin-input" name="origin" placeholder="Source">
-    <input id="submit-fineprint" type="submit">
+  <form id="agreement-form">
+    <input type="text" id="print-input" name="words" placeholder="Agreement">
+    <input type="text" id="origin-input" name="origin" placeholder="With">
+    <input type="submit">
   </form>
 </template>

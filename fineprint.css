@@ -19,12 +19,20 @@
 body {
     background-color: white;
     font-family: Fake Receipt;
+    margin:0;
 }
 
-input {
-    height: 40px;
+#agreement-form {
+    position: fixed;
+    left: 25%;
+    top: 20px;
+    }
+    
+    
+#print-input, #origin-input {
+    height: 20px;
     font-family: Fake Receipt;
-    font-size: 20pt;
+    font-size: 10pt;
 }
 
 select {
@@ -41,16 +49,15 @@ select {
 #origin-input {
     width: 20%;
     border: none;
-    background-color: #FAFFBD;
     text-align: center;
 }
 
-input[type=submit] {
-    background: #DCDCDC;
-    cursor: zoom-in;
-    color: #FFFFFF;
-    border: 3px solid #C8C8C8;
-}
+/*input[type=submit] {*/
+/*    background: #DCDCDC;*/
+/*    cursor: zoom-in;*/
+/*    color: #FFFFFF;*/
+/*    border: 3px solid #C8C8C8;*/
+/*}*/
 
 .delete {
     text-decoration: none;
@@ -58,7 +65,9 @@ input[type=submit] {
 }
 
 .dropdown {
-    position: relative;
+    position: fixed;
+    top: 24px;
+    left: 20px;
     display: inline-block;
 }
 
@@ -77,54 +86,42 @@ input[type=submit] {
 }
 
 
-/*.header {*/
-/*    width:100%;*/
-/*    margin:10px auto;*/
-/*   position:fixed;*/
-
-
-/*    left:0;*/
-
-
-/*    top:0;*/
-
-
-/*    padding:10px 20px;*/
-
-
-/*}*/
-
 .container {
-    width: 80%;
-    margin: 10px auto;
+    width: 100%;
+    margin:0;
 }
 
 .item-container {
-    margin-top: 40px;
+    margin-top:0px;
 }
 
 .brand {
     font-family: Fake Receipt;
-    color: black;
+    color:white;
     font-size: 10pt;
 }
 
-
-/* The animation code */
-
-@keyframes enlarge {
-    from {
-        font-size: 1pt;
-    }
-    to {
-        font-size: 1000pt;
-    }
-}
-
 .words {
-    font-size: 20pt;
-    animation: enlarge 3000s infinite;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 100pt;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 50s linear infinite;
 }
+
+.words:hover {
+    animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { text-indent: 0em }
+    100% { text-indent: -45em }
+}
+
+
 
 .username {
     text-decoration: underline;
