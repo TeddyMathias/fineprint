@@ -79,6 +79,7 @@ if (Meteor.isClient) {
     "click .words": function(event) {
       event.preventDefault();
       (".words").removeClass( ".words" );
+      document.getElementById("whatever").className = "";
 
     }
     
