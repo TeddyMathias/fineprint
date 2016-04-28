@@ -10,6 +10,9 @@
     font-size: 5pt;
 }
 
+.handshake {
+    margin-bottom: -25px;
+}
 .admin-input {
     height: 20px;
     font-family: Fake Receipt;
@@ -108,7 +111,7 @@ select {
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
-    animation: marquee 50s linear infinite;
+    animation: marquee 30s linear infinite;
 }
 
 .words:hover {
@@ -117,8 +120,8 @@ select {
 
 /* Make it move */
 @keyframes marquee {
-    0%   { text-indent: 0em }
-    100% { text-indent: -45em }
+    0%   { text-indent: 10em }
+    100% { text-indent: -95em }
 }
 
 
