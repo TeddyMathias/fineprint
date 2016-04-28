@@ -12,6 +12,7 @@
 
 .handshake {
     margin-bottom: -25px;
+    margin-left:-10px;
 }
 .admin-input {
     height: 20px;
@@ -111,7 +112,7 @@ select {
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
-    animation: marquee 30s linear infinite;
+    animation: marquee 37s linear infinite;
 }
 
 .words:hover {
@@ -121,7 +122,7 @@ select {
 /* Make it move */
 @keyframes marquee {
     0%   { text-indent: 10em }
-    100% { text-indent: -95em }
+    100% { text-indent: -75em }
 }
 
 
